@@ -31,8 +31,8 @@ void setup(){
 
     DDRB |= (1<<DDB3); // Set pin 3 to be an output
     iterations = 0;
-    //maximum duration of 4 hours = 14,400x 8s cycles. Max rand value is at least 32767
-    target = rand() % 14400 + 1;
+    //maximum duration of 2 hours = 900x 8s cycles. Max rand value is at least 32767
+    target = rand() % 900 + 1;
     // target = rand() % 4 + 1; //debug
 
     set_sleep_mode(SLEEP_MODE_PWR_DOWN); //Sets sleep mode to Power-down
@@ -55,7 +55,7 @@ void loop(){
     _delay_ms(2000); //multiplies by 8 for some reason unless arduino.h is included
     PORTB &= ~(1<<PORTB3); // set pin 3 low
 
-    target = rand() % 14400 + 1;
+    target = rand() % 900 + 1;
     // target = rand() % 4 + 1; //debug
     iterations = 0;
   }
